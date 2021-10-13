@@ -1,0 +1,30 @@
+PROCEDURE dot_product( vector:ARRAY_OF FLOAT[2] , v1,v2:FLOAT) FLOAT;
+VAR
+    i:INTEGER;
+    ps:FLOAT;
+    vector :ARRAY_OF Float[2];
+    v1:vector[0]:=FLOAT;
+    v2:vector[1]:=FLOAT;
+BEGIN
+    ps:=0;
+    FOR i FROM 0 TO 1   DO
+        FOR i FROM 0 TO 1   DO
+            Read(vector[i]);
+    END_FOR
+        ps:=ps + v1 * v2 ;
+    END_FOR
+END
+ALGORITHM scalar_product
+VAR
+    vector:ARRAY_OF FLOAT[2];
+    ps:FLOAT;
+    note:STRING;
+BEGIN
+    ps:=dot_product(vector:ARRAY_OF FLOAT[2]);
+    IF (ps=0) THEN
+        note = 'v1 and v2 are orthogonal'
+        ELSE
+        note = 'v1 and v2 are not orthogonal'
+    END_IF
+    Write(note);
+END
